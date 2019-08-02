@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        第三方模块  body-parser
+        安装    在app.js   引入并注册为中间件
+        在router之前注册    通过req.body获取数据
+        const bodyParser = require('bodyparser');
+        app.user(bodyParser.urlencoded({extended:false}));
+        注册之后,惠子啊req对象身上多一个body属性,这个属性就是我们
+
+        中间件  在环节的上游给流程加了东西,在环节的下游就可以直接使用
+
+        获得get的data
+        express中req.query便是一个对象
+
+        XMLHttpRequest2.0超时
+        xhr.timeout = 3000;
+        xhr.ontimeout = function(){
+            alert('TimeOut')
+        }
+
+        中间件
+            流程中的某个环节
+            在express里面是一个函数
+                该中间件函数有三个参数
+                    req res next
+            作用:在流程里面加上些后面流程要用的东西
+            app.use(function(req,res,next){
+                req.add= "add content";
+                newt();
+            })
+
+        修改
+            方式1:现在服务器上提供获取一个静态资源的接口
+            再提供一个根据id获取数据的接口
+            根据Id获取表单里面
+            点击完成收集数据发送会服务器
+            方式2:根据id
+
+        跨域
+            协议+IP+端口   都相同为同源
+            跨过不同的域名获取数据
+            默认是不允许的
+
+            去别人的服务器获取数据的
+            使用:
+            服务器端允许 -  在响应头里面添加一个指定的允许的体
+
+            jsonp 
+                原理: 
+                使用script标签发送请求,其src属性,既能发请求,又能跨域
+                script发送的请求除了接口地址,还要带一个函数名到服务器
+                服务器接收到了请求之后,得到函数名,返回一个函数(数据)这个格式
+                script标签收到返回结果,根据结构
+
+
+
+    </pre>
+</body>
+
+</html>
